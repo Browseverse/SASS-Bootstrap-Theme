@@ -1,0 +1,16 @@
+/*   
+Theme Name: SASS Bootstrap Theme
+Theme URI: http://upthemes.com/themes/sass-bootstrap/
+Description: A SASS-enabled responsive WordPress theme that uses Twitter's Bootstrap UI framework with bbPress support.
+Author: UpThemes
+Author URI: UpThemes
+Version: .4
+
+*/
+
+@import 'stylesheets/bootstrap.css';
+@import 'stylesheets/responsive.css';
+
+@media print {
+	@import 'stylesheets/print.css';
+}
