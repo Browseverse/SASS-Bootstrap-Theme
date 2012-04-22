@@ -1,4 +1,459 @@
 <?php
+/**
+ * Register Bootstrap Theme Options
+ *
+ * Sets up the theme options tab for Bootstrap
+ * as well as the actual options.
+ *
+ * @uses apply_filters()
+ */
+
+function sassbs_register_options_page(){
+	
+	$thistab = array(
+		"name" => "bootstrap_options",
+		"title" => __("Bootstrap Options","sass-bootstrap"),
+		'sections' => apply_filters('bootstrap-options-tabs',array(
+			'plugins' => array(
+				'name' => 'plugins',
+				'title' => __( 'Plugins', 'sass-bootstrap' ),
+				'description' => __( 'Select the Bootstrap plugins you\'d like enabled across the site.','sass-bootstrap' )
+			)
+		))
+	);
+	
+	$options = array(
+		'bootstrap_alert' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_alert",
+			"title" => "Alert Plugin",
+			'description' => __( 'Alert plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+	    "id" => "plugins",
+	    "type" => "select",
+	    "default" => "false",
+	    "valid_options" => array(
+	    	'false' => array(
+	    		"name" => "false",
+	    		"title" => __( 'Disabled', 'sass-bootstrap' )
+	    	),
+	    	'true' => array(
+	    		"name" => "true",
+	    		"title" => __( 'Enabled', 'sass-bootstrap' )
+	    	)
+	    )
+		),
+		'bootstrap_button' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_button",
+			"title" => "Button Plugin",
+			'description' => __( 'Button plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_carousel' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_carousel",
+			"title" => "Carousel Plugin",
+			'description' => __( 'Carousel plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_collapse' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_collapse",
+			"title" => "Collapse Plugin",
+			'description' => __( 'Collapse plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_dropdown' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_dropdown",
+			"title" => "Dropdown Plugin",
+			'description' => __( 'Dropdown plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_modal' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_modal",
+			"title" => "Modal Plugin",
+			'description' => __( 'Modal plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_popover' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_popover",
+			"title" => "Popover Plugin",
+			'description' => __( 'Popover plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_scrollspy' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_scrollspy",
+			"title" => "ScrollSpy Plugin",
+			'description' => __( 'ScrollSpy plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_tab' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_tab",
+			"title" => "Tab Plugin",
+			'description' => __( 'Tab plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_tooltip' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_tooltip",
+			"title" => "Tooltip Plugin",
+			'description' => __( 'Tooltip plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		),
+		'bootstrap_typeahead' => array(
+			'tab' => $thistab['name'],
+			"name" => "bootstrap_typeahead",
+			"title" => "TypeAhead Plugin",
+			'description' => __( 'TypeAhead plugin description', 'sass-bootstrap' ),
+			'section' => 'plugins',
+			'since' => '1.0',
+		  "id" => "plugins",
+		  "type" => "select",
+		  "default" => "false",
+		  "valid_options" => array(
+		  	'false' => array(
+		  		"name" => "false",
+		  		"title" => __( 'Disabled', 'sass-bootstrap' )
+		  	),
+		  	'true' => array(
+		  		"name" => "true",
+		  		"title" => __( 'Enabled', 'sass-bootstrap' )
+		  	)
+		  )
+		)
+	);
+
+	register_theme_options($options);
+	register_theme_option_tab($thistab);
+
+}
+
+add_action('after_setup_theme','sassbs_register_options_page');
+
+/**
+ * Bootstrap Nav Class
+ *
+ * Builds the navbar CSS class.
+ *
+ * @uses apply_filters()
+ *
+ */
+function sassbs_nav_class(){
+
+	$default = 'navbar';
+
+	$class .= 'class="';
+	$class .= apply_filters('sassbs-nav-class',$default);
+	$class .= '"';
+
+	echo $class;
+
+}
+
+/**
+ * Bootstrap Nav Class
+ *
+ * Builds the navbar CSS class.
+ *
+ * @uses apply_filters()
+ *
+ */
+function sassbs_filter_nav_class($class){
+
+	$up_options = upfw_get_options();
+
+	if( isset( $up_options->bootstrap_nav_style ) ){
+		$class .= " " . esc_html($up_options->bootstrap_nav_style);
+	}
+
+	return $class;
+
+}
+
+add_filter('sassbs-nav-class','sassbs_filter_nav_class');
+
+/**
+ * Filters Layout Sections for Bootstrap Tab
+ *
+ * Allows us to add tab section for layout.
+ *
+ * @arg $bootstrap_options_tabs		Bootstrap options tab
+ * @uses array_merge()
+ *
+ */
+function sassbs_add_nav_layout_options(){
+	$nav_layout_option = array(
+		'nav_layout' => array(
+			'tab' => 'bootstrap_options',
+			"name" => "nav_layout",
+			"title" => "Nav Layout",
+			'description' => __( 'Option for changing the navigation layout.', 'sass-bootstrap' ),
+			'section' => 'layout',
+			'since' => '1.0',
+	    "id" => "layout",
+	    "type" => "select",
+	    "default" => "navbar",
+	    "valid_options" => array(
+				'navbar' => array(
+					"name" => "navbar",
+					"title" => __( 'Standard Top (Not Full Width)', 'sass-bootstrap' )
+				),
+				'navbar-fixed-top' => array(
+					"name" => "navbar-fixed-top",
+					"title" => __( 'Fixed Top (Full Width)', 'sass-bootstrap' )
+				),
+				'nav-fixed-bottom' => array(
+					"name" => "nav-fixed-bottom",
+					"title" => __( 'Fixed Bottom (Full Width)', 'sass-bootstrap' )
+				)
+	    )
+		)
+	);
+	
+	register_theme_options($nav_layout_option);
+}
+
+add_action('after_setup_theme','sassbs_add_nav_layout_options');
+
+/**
+ * Filters Layout Sections for Bootstrap Tab
+ *
+ * Allows us to add tab section for layout.
+ *
+ * @arg $bootstrap_options_tabs		Bootstrap options tab
+ * @uses array_merge()
+ *
+ */
+function sass_bs_register_layout_section($bootstrap_options_tabs){
+
+	$layout_section = array(
+		'layout' => array(
+			'name' => 'layout',
+			'title' => __( 'Layout', 'sass-bootstrap' ),
+			'description' => __( 'Options to modify the layout of the Bootstrap theme.','sass-bootstrap' )
+		)
+	);
+
+	return array_merge($bootstrap_options_tabs,$layout_section);	
+
+}
+
+add_filter('bootstrap-options-tabs','sass_bs_register_layout_section');
+
+/**
+ * Registers All Bootstrap plugins
+ *
+ * Registers scripts for theme to allow you to enqueue scripts
+ * at a later time, as needed.
+ *
+ * @uses wp_register_script()
+ * @uses get_template_directory_uri()
+ *
+ */
+function sassbs_register_plugins(){
+	
+	wp_register_script('bootstrap_alert',get_template_directory_uri() . "/scripts/bootstrap-alert.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_button',get_template_directory_uri() . "/scripts/bootstrap-button.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_carousel',get_template_directory_uri() . "/scripts/bootstrap-carousel.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_collapse',get_template_directory_uri() . "/scripts/bootstrap-collapse.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_dropdown',get_template_directory_uri() . "/scripts/bootstrap-dropdown.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_modal',get_template_directory_uri() . "/scripts/bootstrap-modal.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_popover',get_template_directory_uri() . "/scripts/bootstrap-popover.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_scrollspy',get_template_directory_uri() . "/scripts/bootstrap-scrollspy.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_tab',get_template_directory_uri() . "/scripts/bootstrap-tab.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_tooltip',get_template_directory_uri() . "/scripts/bootstrap-tooltip.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_transition',get_template_directory_uri() . "/scripts/bootstrap-transition.js",false,THEME_VERSION);
+	wp_register_script('bootstrap_typeahead',get_template_directory_uri() . "/scripts/bootstrap-typeahead.js",false,THEME_VERSION);
+	
+}
+
+add_action('after_setup_theme','sassbs_register_plugins');
+
+/**
+ * Enqeues Bootstrap plugins as needed
+ *
+ * Checks to make sure each option is enabled
+ * then enqueues the script if so.
+ *
+ * @uses upfw_get_options()
+ * @uses wp_enqueue_script()
+ *
+ */
+function sassbs_enqueue_plugins(){
+	$up_options = upfw_get_options();
+	
+	if( $up_options->bootstrap_alert == 'true' )
+		wp_enqueue_script('bootstrap_alert');
+	
+	if( $up_options->bootstrap_button == 'true' )
+		wp_enqueue_script('bootstrap_button');
+	
+	if( $up_options->bootstrap_carousel == 'true' )
+		wp_enqueue_script('bootstrap_carousel');
+	
+	if( $up_options->bootstrap_collapse == 'true' )
+		wp_enqueue_script('bootstrap_collapse');
+	
+	if( $up_options->bootstrap_dropdown == 'true' )
+		wp_enqueue_script('bootstrap_dropdown');
+	
+	if( $up_options->bootstrap_modal == 'true' )
+		wp_enqueue_script('bootstrap_modal');
+	
+	if( $up_options->bootstrap_popover == 'true' )
+		wp_enqueue_script('bootstrap_popover');
+	
+	if( $up_options->bootstrap_scrollspy == 'true' )
+		wp_enqueue_script('bootstrap_scrollspy');
+	
+	if( $up_options->bootstrap_tab == 'true' )
+		wp_enqueue_script('bootstrap_tab');
+	
+	if( $up_options->bootstrap_tooltip == 'true' )
+		wp_enqueue_script('bootstrap_tooltip');
+	
+	if( $up_options->bootstrap_transition == 'true' )
+		wp_enqueue_script('bootstrap_transition');
+	
+	if( $up_options->bootstrap_typeahead == 'true' )
+		wp_enqueue_script('bootstrap_typeahead');
+	
+}
+
+add_action('wp_enqueue_scripts','sassbs_enqueue_plugins');
 
 /**
  * Creates Bootstrap Walker Nav Menu
@@ -10,7 +465,6 @@
  * @extends Walker_Nav_Menu()
  *
  */
-
 class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	function start_lvl( &$output, $depth ) {
