@@ -295,9 +295,7 @@ function sassbs_filter_nav_class($class){
 
 	$up_options = upfw_get_options();
 
-	if( isset( $up_options->bootstrap_nav_style ) ){
-		$class .= " " . esc_html($up_options->bootstrap_nav_style);
-	}
+	$class .= " ".esc_html($up_options->nav_layout);
 
 	return $class;
 
@@ -335,8 +333,8 @@ function sassbs_add_nav_layout_options(){
 					"name" => "navbar-fixed-top",
 					"title" => __( 'Fixed Top (Full Width)', 'sass-bootstrap' )
 				),
-				'nav-fixed-bottom' => array(
-					"name" => "nav-fixed-bottom",
+				'navbar-fixed-bottom' => array(
+					"name" => "navbar-fixed-bottom",
 					"title" => __( 'Fixed Bottom (Full Width)', 'sass-bootstrap' )
 				)
 	    )
