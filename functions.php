@@ -27,18 +27,20 @@ define('THEME_VERSION',$theme_data['Version']);
 
 // Set up library path constants
 define('LIBPATH', TEMPLATEPATH . '/lib/');
-define('LIBURL', get_stylesheet_directory_uri() . '/lib/');
+define('LIBURL', get_template_directory_uri() . '/lib/');
+
+include_once(TEMPLATEPATH.'/admin/admin.php');
 
 // Setup Theme
-require_once(LIBPATH . 'setup.php');
+include_once(LIBPATH . 'setup.php');
 
 // Utilities
-require_once(LIBPATH . 'utils.php');
+include_once(LIBPATH . 'utils.php');
 
 // BBPress integration
-require_once(LIBPATH . 'bbpress.php');
+include_once(LIBPATH . 'bbpress.php');
 
 // Bootstrap integration
-require_once(LIBPATH . 'bootstrap.php');
+include_once(LIBPATH . 'bootstrap.php');
 
 ?>

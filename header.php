@@ -31,7 +31,7 @@
 
 			<?php do_action('sassbs_before_header_nav'); ?>
 
-			<div class="navbar">
+			<div <?php sassbs_nav_class(); ?>>
 
 				<div class="navbar-inner">
 
